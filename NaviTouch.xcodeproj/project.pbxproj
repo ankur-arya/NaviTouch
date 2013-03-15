@@ -18,8 +18,13 @@
 		9213A05316EE3B48005CACD1 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9213A05216EE3B48005CACD1 /* Default-568h@2x.png */; };
 		9213A05616EE3B48005CACD1 /* AAViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9213A05516EE3B48005CACD1 /* AAViewController.m */; };
 		9213A05916EE3B48005CACD1 /* AAViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9213A05716EE3B48005CACD1 /* AAViewController.xib */; };
-		9213A06216EE3CFD005CACD1 /* AARegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9213A06016EE3CFD005CACD1 /* AARegisterViewController.m */; };
-		9213A06316EE3CFD005CACD1 /* AARegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9213A06116EE3CFD005CACD1 /* AARegisterViewController.xib */; };
+		92740F7C16F0F3C100CBFC0A /* OpenUDID.m in Sources */ = {isa = PBXBuildFile; fileRef = 92740F7B16F0F3C100CBFC0A /* OpenUDID.m */; };
+		92740F8016F0FB8600CBFC0A /* AADisplayNameVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 92740F7E16F0FB8600CBFC0A /* AADisplayNameVC.m */; };
+		92740F8116F0FB8600CBFC0A /* AADisplayNameVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92740F7F16F0FB8600CBFC0A /* AADisplayNameVC.xib */; };
+		92740F8516F2404B00CBFC0A /* AAContactsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 92740F8316F2404B00CBFC0A /* AAContactsVC.m */; };
+		92740F8616F2404B00CBFC0A /* AAContactsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92740F8416F2404B00CBFC0A /* AAContactsVC.xib */; };
+		92740F8916F2408400CBFC0A /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92740F8716F2408400CBFC0A /* AddressBook.framework */; };
+		92740F8A16F2408400CBFC0A /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92740F8816F2408400CBFC0A /* AddressBookUI.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,9 +44,16 @@
 		9213A05416EE3B48005CACD1 /* AAViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AAViewController.h; sourceTree = "<group>"; };
 		9213A05516EE3B48005CACD1 /* AAViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AAViewController.m; sourceTree = "<group>"; };
 		9213A05816EE3B48005CACD1 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/AAViewController.xib; sourceTree = "<group>"; };
-		9213A05F16EE3CFD005CACD1 /* AARegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AARegisterViewController.h; sourceTree = "<group>"; };
-		9213A06016EE3CFD005CACD1 /* AARegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AARegisterViewController.m; sourceTree = "<group>"; };
-		9213A06116EE3CFD005CACD1 /* AARegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AARegisterViewController.xib; sourceTree = "<group>"; };
+		92740F7A16F0F3C100CBFC0A /* OpenUDID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenUDID.h; sourceTree = "<group>"; };
+		92740F7B16F0F3C100CBFC0A /* OpenUDID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenUDID.m; sourceTree = "<group>"; };
+		92740F7D16F0FB8600CBFC0A /* AADisplayNameVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AADisplayNameVC.h; sourceTree = "<group>"; };
+		92740F7E16F0FB8600CBFC0A /* AADisplayNameVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AADisplayNameVC.m; sourceTree = "<group>"; };
+		92740F7F16F0FB8600CBFC0A /* AADisplayNameVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AADisplayNameVC.xib; sourceTree = "<group>"; };
+		92740F8216F2404B00CBFC0A /* AAContactsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAContactsVC.h; sourceTree = "<group>"; };
+		92740F8316F2404B00CBFC0A /* AAContactsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAContactsVC.m; sourceTree = "<group>"; };
+		92740F8416F2404B00CBFC0A /* AAContactsVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AAContactsVC.xib; sourceTree = "<group>"; };
+		92740F8716F2408400CBFC0A /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		92740F8816F2408400CBFC0A /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +61,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92740F8916F2408400CBFC0A /* AddressBook.framework in Frameworks */,
+				92740F8A16F2408400CBFC0A /* AddressBookUI.framework in Frameworks */,
 				9213A03D16EE3B48005CACD1 /* UIKit.framework in Frameworks */,
 				9213A03F16EE3B48005CACD1 /* Foundation.framework in Frameworks */,
 				9213A04116EE3B48005CACD1 /* CoreGraphics.framework in Frameworks */,
@@ -78,6 +92,8 @@
 		9213A03B16EE3B48005CACD1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				92740F8716F2408400CBFC0A /* AddressBook.framework */,
+				92740F8816F2408400CBFC0A /* AddressBookUI.framework */,
 				9213A03C16EE3B48005CACD1 /* UIKit.framework */,
 				9213A03E16EE3B48005CACD1 /* Foundation.framework */,
 				9213A04016EE3B48005CACD1 /* CoreGraphics.framework */,
@@ -88,14 +104,18 @@
 		9213A04216EE3B48005CACD1 /* NaviTouch */ = {
 			isa = PBXGroup;
 			children = (
+				92740F7616F0E6F900CBFC0A /* OpenUDID */,
 				9213A04B16EE3B48005CACD1 /* AAAppDelegate.h */,
 				9213A04C16EE3B48005CACD1 /* AAAppDelegate.m */,
 				9213A05416EE3B48005CACD1 /* AAViewController.h */,
 				9213A05516EE3B48005CACD1 /* AAViewController.m */,
 				9213A05716EE3B48005CACD1 /* AAViewController.xib */,
-				9213A05F16EE3CFD005CACD1 /* AARegisterViewController.h */,
-				9213A06016EE3CFD005CACD1 /* AARegisterViewController.m */,
-				9213A06116EE3CFD005CACD1 /* AARegisterViewController.xib */,
+				92740F7D16F0FB8600CBFC0A /* AADisplayNameVC.h */,
+				92740F7E16F0FB8600CBFC0A /* AADisplayNameVC.m */,
+				92740F7F16F0FB8600CBFC0A /* AADisplayNameVC.xib */,
+				92740F8216F2404B00CBFC0A /* AAContactsVC.h */,
+				92740F8316F2404B00CBFC0A /* AAContactsVC.m */,
+				92740F8416F2404B00CBFC0A /* AAContactsVC.xib */,
 				9213A04316EE3B48005CACD1 /* Supporting Files */,
 			);
 			path = NaviTouch;
@@ -113,6 +133,15 @@
 				9213A05216EE3B48005CACD1 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		92740F7616F0E6F900CBFC0A /* OpenUDID */ = {
+			isa = PBXGroup;
+			children = (
+				92740F7A16F0F3C100CBFC0A /* OpenUDID.h */,
+				92740F7B16F0F3C100CBFC0A /* OpenUDID.m */,
+			);
+			name = OpenUDID;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -172,7 +201,8 @@
 				9213A05116EE3B48005CACD1 /* Default@2x.png in Resources */,
 				9213A05316EE3B48005CACD1 /* Default-568h@2x.png in Resources */,
 				9213A05916EE3B48005CACD1 /* AAViewController.xib in Resources */,
-				9213A06316EE3CFD005CACD1 /* AARegisterViewController.xib in Resources */,
+				92740F8116F0FB8600CBFC0A /* AADisplayNameVC.xib in Resources */,
+				92740F8616F2404B00CBFC0A /* AAContactsVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -186,7 +216,9 @@
 				9213A04916EE3B48005CACD1 /* main.m in Sources */,
 				9213A04D16EE3B48005CACD1 /* AAAppDelegate.m in Sources */,
 				9213A05616EE3B48005CACD1 /* AAViewController.m in Sources */,
-				9213A06216EE3CFD005CACD1 /* AARegisterViewController.m in Sources */,
+				92740F7C16F0F3C100CBFC0A /* OpenUDID.m in Sources */,
+				92740F8016F0FB8600CBFC0A /* AADisplayNameVC.m in Sources */,
+				92740F8516F2404B00CBFC0A /* AAContactsVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,6 +341,7 @@
 				9213A05E16EE3B48005CACD1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

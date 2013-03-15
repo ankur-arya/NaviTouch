@@ -7,7 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "OpenUDID.h"
+#import "AADisplayNameVC.h"
+#import "AAContactsVC.h"
 
 @interface AAViewController : UIViewController
+
+@property (nonatomic, retain) IBOutlet UITextField *usernameText;
+@property (nonatomic, retain) IBOutlet UITextField *passwordText;
+
+-(IBAction)submitLoginDetails:(id)sender;
 
 @end
