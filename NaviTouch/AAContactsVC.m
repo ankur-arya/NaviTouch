@@ -56,7 +56,47 @@
         
        
     }
-     NSLog(@"_contactsToBeAdded  ==> %@",_contactsToBeAdded);
+     //NSLog(@"_contactsToBeAdded  ==> %@",_contactsToBeAdded);
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return _contactsToBeAdded.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *CellIdentifier = @"Cell";
+    AACustomCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    
+    if (cell == nil) {
+        
+        NSArray* views = [[NSBundle mainBundle] loadNibNamed:@"AACustomCell" owner:nil options:nil];
+        
+        for (UIView *view in views) {
+            
+            if([view isKindOfClass:[UITableViewCell class]])
+            {
+                cell = (AACustomCell*)view;
+                 cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;               
+                cell.nameLbl.text =[[_contactsToBeAdded objectAtIndex:indexPath.row]objectForKey:@"firstName"];
+                cell.userImageView.image = [UIImage imageNamed:@"sample-user"];
+                cell.userStatusImageView.hidden = YES;
+                if (indexPath.row == 1) {
+                    cell.userStatusImageView.hidden = NO;
+                    cell.userStatusImageView.image = [UIImage imageNamed:@"online"];
+                    cell.lastSeenTimeLbl.hidden =YES;
+                }
+                
+               // NSLog(@"%@",[[_contactsToBeAdded objectAtIndex:indexPath.row]objectForKey:@"firstName"]);
+            }
+            
+        }
+    }
+    
+    
+    return cell;
+
 }
 
 - (void)didReceiveMemoryWarning

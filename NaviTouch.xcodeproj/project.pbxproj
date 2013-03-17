@@ -25,6 +25,15 @@
 		92740F8616F2404B00CBFC0A /* AAContactsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92740F8416F2404B00CBFC0A /* AAContactsVC.xib */; };
 		92740F8916F2408400CBFC0A /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92740F8716F2408400CBFC0A /* AddressBook.framework */; };
 		92740F8A16F2408400CBFC0A /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92740F8816F2408400CBFC0A /* AddressBookUI.framework */; };
+		92FA0E0616F462C200530884 /* AACustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 92FA0E0516F462C200530884 /* AACustomCell.m */; };
+		92FA0E0916F58EE100530884 /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 92FA0E0816F58EE100530884 /* TPKeyboardAvoidingScrollView.m */; };
+		92FA0E0D16F58FFF00530884 /* AAMapVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 92FA0E0B16F58FFF00530884 /* AAMapVC.m */; };
+		92FA0E0E16F58FFF00530884 /* AAMapVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92FA0E0C16F58FFF00530884 /* AAMapVC.xib */; };
+		92FA0E1016F5901900530884 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92FA0E0F16F5901900530884 /* MapKit.framework */; };
+		92FA0E1216F5902300530884 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92FA0E1116F5902300530884 /* CoreLocation.framework */; };
+		92FA0E1716F5919300530884 /* AACustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92FA0E1616F5919300530884 /* AACustomCell.xib */; };
+		92FA0E1B16F5A22700530884 /* sample-user@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 92FA0E1A16F5A22700530884 /* sample-user@2x.png */; };
+		92FA0E1D16F5A36F00530884 /* online@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 92FA0E1C16F5A36F00530884 /* online@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +63,18 @@
 		92740F8416F2404B00CBFC0A /* AAContactsVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AAContactsVC.xib; sourceTree = "<group>"; };
 		92740F8716F2408400CBFC0A /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		92740F8816F2408400CBFC0A /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
+		92FA0E0416F462C200530884 /* AACustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AACustomCell.h; sourceTree = "<group>"; };
+		92FA0E0516F462C200530884 /* AACustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AACustomCell.m; sourceTree = "<group>"; };
+		92FA0E0716F58EE100530884 /* TPKeyboardAvoidingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingScrollView.h; sourceTree = "<group>"; };
+		92FA0E0816F58EE100530884 /* TPKeyboardAvoidingScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingScrollView.m; sourceTree = "<group>"; };
+		92FA0E0A16F58FFF00530884 /* AAMapVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAMapVC.h; sourceTree = "<group>"; };
+		92FA0E0B16F58FFF00530884 /* AAMapVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAMapVC.m; sourceTree = "<group>"; };
+		92FA0E0C16F58FFF00530884 /* AAMapVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AAMapVC.xib; sourceTree = "<group>"; };
+		92FA0E0F16F5901900530884 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		92FA0E1116F5902300530884 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		92FA0E1616F5919300530884 /* AACustomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AACustomCell.xib; sourceTree = "<group>"; };
+		92FA0E1A16F5A22700530884 /* sample-user@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sample-user@2x.png"; sourceTree = "<group>"; };
+		92FA0E1C16F5A36F00530884 /* online@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "online@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +82,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92FA0E1216F5902300530884 /* CoreLocation.framework in Frameworks */,
+				92FA0E1016F5901900530884 /* MapKit.framework in Frameworks */,
 				92740F8916F2408400CBFC0A /* AddressBook.framework in Frameworks */,
 				92740F8A16F2408400CBFC0A /* AddressBookUI.framework in Frameworks */,
 				9213A03D16EE3B48005CACD1 /* UIKit.framework in Frameworks */,
@@ -92,6 +115,8 @@
 		9213A03B16EE3B48005CACD1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				92FA0E1116F5902300530884 /* CoreLocation.framework */,
+				92FA0E0F16F5901900530884 /* MapKit.framework */,
 				92740F8716F2408400CBFC0A /* AddressBook.framework */,
 				92740F8816F2408400CBFC0A /* AddressBookUI.framework */,
 				9213A03C16EE3B48005CACD1 /* UIKit.framework */,
@@ -104,18 +129,8 @@
 		9213A04216EE3B48005CACD1 /* NaviTouch */ = {
 			isa = PBXGroup;
 			children = (
-				92740F7616F0E6F900CBFC0A /* OpenUDID */,
-				9213A04B16EE3B48005CACD1 /* AAAppDelegate.h */,
-				9213A04C16EE3B48005CACD1 /* AAAppDelegate.m */,
-				9213A05416EE3B48005CACD1 /* AAViewController.h */,
-				9213A05516EE3B48005CACD1 /* AAViewController.m */,
-				9213A05716EE3B48005CACD1 /* AAViewController.xib */,
-				92740F7D16F0FB8600CBFC0A /* AADisplayNameVC.h */,
-				92740F7E16F0FB8600CBFC0A /* AADisplayNameVC.m */,
-				92740F7F16F0FB8600CBFC0A /* AADisplayNameVC.xib */,
-				92740F8216F2404B00CBFC0A /* AAContactsVC.h */,
-				92740F8316F2404B00CBFC0A /* AAContactsVC.m */,
-				92740F8416F2404B00CBFC0A /* AAContactsVC.xib */,
+				92FA0E1416F5908400530884 /* 3rd Party Library */,
+				92FA0E1516F590A500530884 /* AAViews */,
 				9213A04316EE3B48005CACD1 /* Supporting Files */,
 			);
 			path = NaviTouch;
@@ -124,6 +139,8 @@
 		9213A04316EE3B48005CACD1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				92FA0E1C16F5A36F00530884 /* online@2x.png */,
+				92FA0E1A16F5A22700530884 /* sample-user@2x.png */,
 				9213A04416EE3B48005CACD1 /* NaviTouch-Info.plist */,
 				9213A04516EE3B48005CACD1 /* InfoPlist.strings */,
 				9213A04816EE3B48005CACD1 /* main.m */,
@@ -142,6 +159,48 @@
 				92740F7B16F0F3C100CBFC0A /* OpenUDID.m */,
 			);
 			name = OpenUDID;
+			sourceTree = "<group>";
+		};
+		92FA0E1316F5906F00530884 /* KeyboardAvoiding */ = {
+			isa = PBXGroup;
+			children = (
+				92FA0E0716F58EE100530884 /* TPKeyboardAvoidingScrollView.h */,
+				92FA0E0816F58EE100530884 /* TPKeyboardAvoidingScrollView.m */,
+			);
+			name = KeyboardAvoiding;
+			sourceTree = "<group>";
+		};
+		92FA0E1416F5908400530884 /* 3rd Party Library */ = {
+			isa = PBXGroup;
+			children = (
+				92FA0E1316F5906F00530884 /* KeyboardAvoiding */,
+				92740F7616F0E6F900CBFC0A /* OpenUDID */,
+			);
+			name = "3rd Party Library";
+			sourceTree = "<group>";
+		};
+		92FA0E1516F590A500530884 /* AAViews */ = {
+			isa = PBXGroup;
+			children = (
+				9213A04B16EE3B48005CACD1 /* AAAppDelegate.h */,
+				9213A04C16EE3B48005CACD1 /* AAAppDelegate.m */,
+				9213A05416EE3B48005CACD1 /* AAViewController.h */,
+				9213A05516EE3B48005CACD1 /* AAViewController.m */,
+				9213A05716EE3B48005CACD1 /* AAViewController.xib */,
+				92740F7D16F0FB8600CBFC0A /* AADisplayNameVC.h */,
+				92740F7E16F0FB8600CBFC0A /* AADisplayNameVC.m */,
+				92740F7F16F0FB8600CBFC0A /* AADisplayNameVC.xib */,
+				92740F8216F2404B00CBFC0A /* AAContactsVC.h */,
+				92740F8316F2404B00CBFC0A /* AAContactsVC.m */,
+				92740F8416F2404B00CBFC0A /* AAContactsVC.xib */,
+				92FA0E0A16F58FFF00530884 /* AAMapVC.h */,
+				92FA0E0B16F58FFF00530884 /* AAMapVC.m */,
+				92FA0E0C16F58FFF00530884 /* AAMapVC.xib */,
+				92FA0E0416F462C200530884 /* AACustomCell.h */,
+				92FA0E0516F462C200530884 /* AACustomCell.m */,
+				92FA0E1616F5919300530884 /* AACustomCell.xib */,
+			);
+			name = AAViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -203,6 +262,10 @@
 				9213A05916EE3B48005CACD1 /* AAViewController.xib in Resources */,
 				92740F8116F0FB8600CBFC0A /* AADisplayNameVC.xib in Resources */,
 				92740F8616F2404B00CBFC0A /* AAContactsVC.xib in Resources */,
+				92FA0E0E16F58FFF00530884 /* AAMapVC.xib in Resources */,
+				92FA0E1716F5919300530884 /* AACustomCell.xib in Resources */,
+				92FA0E1B16F5A22700530884 /* sample-user@2x.png in Resources */,
+				92FA0E1D16F5A36F00530884 /* online@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,6 +282,9 @@
 				92740F7C16F0F3C100CBFC0A /* OpenUDID.m in Sources */,
 				92740F8016F0FB8600CBFC0A /* AADisplayNameVC.m in Sources */,
 				92740F8516F2404B00CBFC0A /* AAContactsVC.m in Sources */,
+				92FA0E0616F462C200530884 /* AACustomCell.m in Sources */,
+				92FA0E0916F58EE100530884 /* TPKeyboardAvoidingScrollView.m in Sources */,
+				92FA0E0D16F58FFF00530884 /* AAMapVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,15 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AddressBook/AddressBook.h>
 #import "OpenUDID.h"
 #import "AADisplayNameVC.h"
 #import "AAContactsVC.h"
 
 @interface AAViewController : UIViewController
+{
+    NSMutableArray *allcontactsArray;
+}
 
 @property (nonatomic, retain) IBOutlet UITextField *usernameText;
 @property (nonatomic, retain) IBOutlet UITextField *passwordText;
-
+@property (nonatomic, retain) NSString *uidStr;
 -(IBAction)submitLoginDetails:(id)sender;
 
 @end

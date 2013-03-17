@@ -81,11 +81,17 @@
     
     NSDictionary *returnDict = [NSJSONSerialization JSONObjectWithData:returnData options:NSJSONReadingAllowFragments error:nil];
     
-    NSLog(@"RETURN DATA = %@",returnDict);
+   // NSLog(@"RETURN DATA = %@",returnDict);
+    
+    _uidStr = [[returnDict objectForKey:@"result"]objectForKey:@"id"];
     NSInteger newUserState = [[[returnDict objectForKey:@"result"]objectForKey:@"new_user"]integerValue];
+    NSString *loginStatus = [returnDict objectForKey:@"status"];
+    if ([loginStatus isEqualToString:@"Success"]) {
+        [self syncAllContactsToServer];
+    }
     if (newUserState == 1) {
         AADisplayNameVC *displayNameVC = [[AADisplayNameVC alloc]init];
-        displayNameVC.userIDStr = [[returnDict objectForKey:@"result"]objectForKey:@"id"];
+        displayNameVC.userIDStr = _uidStr;//[[returnDict objectForKey:@"result"]objectForKey:@"id"];
         [self.navigationController pushViewController:displayNameVC animated:YES];
     }
     else
@@ -96,4 +102,93 @@
 
 }
 
+-(void)syncAllContactsToServer
+{   allcontactsArray = [[NSMutableArray alloc]init];
+    
+    [self getAllContactsFromAddressBook];
+    NSString * phoneNumbersStr = [[allcontactsArray valueForKey:@"description"] componentsJoinedByString:@","];
+    NSLog(@"Final Array of Contacts = %@",phoneNumbersStr);
+    
+    
+    //**************** POST Request *******************//
+    
+    NSString *urlString = @"http://suncookingus.com/webs/api.php?rquest=syncContacts";
+    
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+    [request setURL:[NSURL URLWithString:urlString]];
+    [request setHTTPMethod:@"POST"];
+    
+    NSString *boundary = @"---------------------------14737809831466499882746641449";
+    NSString *contentType = [NSString stringWithFormat:@"multipart/form-data; boundary=%@", boundary];
+    [request addValue:contentType forHTTPHeaderField:@"Content-Type"];
+    
+    NSMutableData *body = [NSMutableData data];
+    [body appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    
+    // String of Phone Numbers
+    [body appendData:[[NSString stringWithFormat:@"--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
+    [body appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"contacts\"\r\n\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
+    [body appendData:[[NSString stringWithString:phoneNumbersStr] dataUsingEncoding:NSUTF8StringEncoding]];
+    [body appendData:[@"\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    
+    
+    // UID String
+    [body appendData:[[NSString stringWithFormat:@"--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
+    [body appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"uid\"\r\n\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
+    [body appendData:[[NSString stringWithString:_uidStr] dataUsingEncoding:NSUTF8StringEncoding]];
+    [body appendData:[@"\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    
+    
+    [body appendData:[[NSString stringWithFormat:@"\r\n--%@--\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
+    [request setHTTPBody:body];
+
+    
+    NSData *returnData = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
+    NSString *returnStr = [NSJSONSerialization JSONObjectWithData:returnData options:kNilOptions error:nil];
+    NSLog(@"Return Str = %@",returnStr);
+    
+
+}
+
+
+-(void)getAllContactsFromAddressBook{
+ABAddressBookRef addressBook = ABAddressBookCreate( );
+CFArrayRef allPeople = ABAddressBookCopyArrayOfAllPeople( addressBook );
+CFIndex nPeople = ABAddressBookGetPersonCount( addressBook );
+
+for ( int i = 0; i < nPeople; i++ )
+{
+    ABRecordRef ref = CFArrayGetValueAtIndex( allPeople, i );
+    
+    NSString *firstName=(__bridge NSString *)ABRecordCopyValue(ref, kABPersonFirstNameProperty);
+    NSString *lastName=(__bridge NSString *)ABRecordCopyValue(ref, kABPersonLastNameProperty);
+    NSString *organization=(__bridge NSString *)ABRecordCopyValue(ref, kABPersonOrganizationProperty);
+    
+    ABMultiValueRef multi = ABRecordCopyValue(ref, kABPersonPhoneProperty);
+    NSString *mobileNumber = (__bridge NSString*)ABMultiValueCopyValueAtIndex(multi, 0);
+    NSString *iPhoneNumber = (__bridge NSString*)ABMultiValueCopyValueAtIndex(multi, 1);
+    NSString *homeNumber = (__bridge NSString*)ABMultiValueCopyValueAtIndex(multi, 2);
+    
+    NSString *pureIphoneNumber = [[iPhoneNumber componentsSeparatedByCharactersInSet:[[NSCharacterSet decimalDigitCharacterSet] invertedSet]] componentsJoinedByString:@""];
+    NSString *pureMobileNumber = [[mobileNumber componentsSeparatedByCharactersInSet:[[NSCharacterSet decimalDigitCharacterSet] invertedSet]] componentsJoinedByString:@""];
+    NSString *pureHomeNumbers = [[homeNumber componentsSeparatedByCharactersInSet:[[NSCharacterSet decimalDigitCharacterSet] invertedSet]] componentsJoinedByString:@""];
+    
+    if(!firstName) firstName=@"";
+    if(!lastName) lastName=@"";
+    if(!organization) organization=@"";
+    if(!pureHomeNumbers) pureHomeNumbers=@"";
+    if(!pureIphoneNumber) pureIphoneNumber=@"";
+    if(!pureMobileNumber) pureMobileNumber=@"";
+
+    [allcontactsArray addObject:pureHomeNumbers];
+    [allcontactsArray addObject:pureIphoneNumber];
+    [allcontactsArray addObject:pureMobileNumber];
+    
+    
+}
+    [allcontactsArray removeObject:@""];
+}
 @end

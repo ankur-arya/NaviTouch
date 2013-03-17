@@ -32,8 +32,9 @@
 
 -(IBAction)submitName:(id)sender
 {
+    NSString *userNameStr = [_displayName.text stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
     
-    NSString *submitNameUrlStr = [NSString stringWithFormat:@"http://suncookingus.com/webs/api.php?rquest=updateName&uid=%@&name=%@",_userIDStr, _displayName.text];
+    NSString *submitNameUrlStr = [NSString stringWithFormat:@"http://suncookingus.com/webs/api.php?rquest=updateName&uid=%@&name=%@",_userIDStr, userNameStr];
     
     NSURLRequest *displayNameRqst = [[NSURLRequest alloc]initWithURL:[NSURL URLWithString:submitNameUrlStr]];
     [NSURLConnection connectionWithRequest:displayNameRqst delegate:self];
@@ -60,6 +61,16 @@
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
     
     _returnArray  = [NSJSONSerialization JSONObjectWithData:_returnData options:kNilOptions error:nil];
+    NSDictionary *tempDict = [NSJSONSerialization JSONObjectWithData:_returnData options:kNilOptions error:nil];
+    NSString *newUserState = [tempDict objectForKey:@"status"];
+    if ([newUserState isEqualToString:@"Success"]) {
+        AAContactsVC *contactsVC = [[AAContactsVC alloc]init];
+        [self.navigationController pushViewController:contactsVC animated:YES];
+    }
+    else
+    {
+       
+    }
 
 }
 
