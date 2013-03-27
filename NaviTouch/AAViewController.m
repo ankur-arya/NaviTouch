@@ -147,11 +147,14 @@
 
     
     NSData *returnData = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
-    NSString *returnStr = [NSJSONSerialization JSONObjectWithData:returnData options:kNilOptions error:nil];
-    NSLog(@"Return Str = %@",returnStr);
+    NSDictionary *returnDict = [NSJSONSerialization JSONObjectWithData:returnData options:kNilOptions error:nil];
     
-
+    NSLog(@"Return Str = %@",returnDict);
+    NSArray *registeredUsersArray = [[returnDict objectForKey:@"result"]objectForKey:@"my_list"];
+    [self saveObject:registeredUsersArray key:@"registeredUsersArray"];
+    
 }
+
 
 
 -(void)getAllContactsFromAddressBook{
@@ -190,5 +193,15 @@ for ( int i = 0; i < nPeople; i++ )
     
 }
     [allcontactsArray removeObject:@""];
+}
+
+-(void)saveObject:(id)obj key:(NSString*)key
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSData *myEncodedObject = [NSKeyedArchiver archivedDataWithRootObject:obj];
+    
+    
+    [defaults setObject:myEncodedObject forKey:key];
+    
 }
 @end

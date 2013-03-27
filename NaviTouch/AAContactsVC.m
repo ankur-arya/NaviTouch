@@ -26,8 +26,16 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    _registeredUsers = [[NSMutableArray alloc]init];
+    _notRegisteredContacts = [[NSMutableArray alloc]init];
+    myRegisteredFriendsArray = [self loadCustomObjectWithKey:@"registeredUsersArray"];
+    NSLog(@"myRegisteredFriendsArray  ===> %@",myRegisteredFriendsArray);
     // Do any additional setup after loading the view from its nib.
     _contactsToBeAdded = [[NSMutableArray alloc]init];
+    [self getAllContactsFromAddressBook];
+}
+
+-(void)getAllContactsFromAddressBook{
     ABAddressBookRef addressBook = ABAddressBookCreate( );
     CFArrayRef allPeople = ABAddressBookCopyArrayOfAllPeople( addressBook );
     CFIndex nPeople = ABAddressBookGetPersonCount( addressBook );
@@ -41,27 +49,77 @@
         NSString *organization=(__bridge NSString *)ABRecordCopyValue(ref, kABPersonOrganizationProperty);
         
         ABMultiValueRef multi = ABRecordCopyValue(ref, kABPersonPhoneProperty);
-        NSString *phoneNumber = (__bridge NSString*)ABMultiValueCopyValueAtIndex(multi, 0);
-        NSString *phoneTemp = [phoneNumber stringByReplacingOccurrencesOfString:@"(" withString:@""];
-        NSString *phoneTemp2 = [phoneTemp stringByReplacingOccurrencesOfString:@") " withString:@""];
-        NSString *phone = [phoneTemp2 stringByReplacingOccurrencesOfString:@"-" withString:@""];
+        NSString *mobileNumber = (__bridge NSString*)ABMultiValueCopyValueAtIndex(multi, 0);
+        NSString *iPhoneNumber = (__bridge NSString*)ABMultiValueCopyValueAtIndex(multi, 1);
+        NSString *homeNumber = (__bridge NSString*)ABMultiValueCopyValueAtIndex(multi, 2);
+        
+        NSString *pureIphoneNumber = [[iPhoneNumber componentsSeparatedByCharactersInSet:[[NSCharacterSet decimalDigitCharacterSet] invertedSet]] componentsJoinedByString:@""];
+        NSString *pureMobileNumber = [[mobileNumber componentsSeparatedByCharactersInSet:[[NSCharacterSet decimalDigitCharacterSet] invertedSet]] componentsJoinedByString:@""];
+        NSString *pureHomeNumbers = [[homeNumber componentsSeparatedByCharactersInSet:[[NSCharacterSet decimalDigitCharacterSet] invertedSet]] componentsJoinedByString:@""];
+        
         if(!firstName) firstName=@"";
         if(!lastName) lastName=@"";
         if(!organization) organization=@"";
-        if(!phoneNumber) phoneNumber=@"";
+        if(!pureHomeNumbers) pureHomeNumbers=@"";
+        if(!pureIphoneNumber) pureIphoneNumber=@"";
+        if(!pureMobileNumber) pureMobileNumber=@"";
         
-        
-        NSDictionary *curContact=[NSDictionary dictionaryWithObjectsAndKeys:(NSString*)firstName,@"firstName",lastName,@"lastName",organization,@"organization", phone,@"phone", nil];
+        NSMutableDictionary *curContact=[NSMutableDictionary dictionaryWithObjectsAndKeys:(NSString*)firstName,pureMobileNumber,firstName,pureIphoneNumber,firstName,pureHomeNumbers, nil];
+       // NSString *contactStr = [NSString stringWithFormat:@"%@ = %@",firstName, pureMobileNumber];
+        [curContact removeObjectForKey:@""];
         [_contactsToBeAdded addObject:curContact];
         
-       
+ 
     }
-     //NSLog(@"_contactsToBeAdded  ==> %@",_contactsToBeAdded);
+    NSLog(@"_contactsToBeAdded  ==>> %@",_contactsToBeAdded);
+    [self extractRegisterFriendsFromAddressBook];
+}
+
+-(void)extractRegisterFriendsFromAddressBook
+{
+    for (int i = 0; i < myRegisteredFriendsArray.count; i++) {
+        NSString *phoneNumberKeyStr = [[myRegisteredFriendsArray objectAtIndex:i]objectForKey:@"phone"];
+        for (int j = 0; j<_contactsToBeAdded.count; j++) {
+            NSString *registeredNameForKey = [[_contactsToBeAdded objectAtIndex:j]objectForKey:phoneNumberKeyStr];
+            
+            
+                       if (registeredNameForKey) {
+                           NSLog(@"registeredNameForKey  ---- > %@ = %@",phoneNumberKeyStr,registeredNameForKey);
+                           NSDictionary *tempDict = [NSDictionary dictionaryWithObjectsAndKeys:phoneNumberKeyStr,@"phone",registeredNameForKey,@"name", nil];
+                           [_registeredUsers addObject:tempDict];
+                           [[_contactsToBeAdded objectAtIndex:i]removeObjectForKey:phoneNumberKeyStr];
+                           
+                break;
+            }
+            
+        }
+    }
+        NSLog(@"Registered CONTACTS = %@",_registeredUsers);
+    
+    
+    
+    _notRegisteredContacts = _contactsToBeAdded;
+    
+    NSLog(@"Not Registered CONTACTS = %@",[[_notRegisteredContacts objectAtIndex:0]allKeys]);
+}
+
+-(id)loadCustomObjectWithKey:(NSString*)key
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSData *myEncodedObject = [defaults objectForKey: key];
+    id temp = (id)[NSKeyedUnarchiver unarchiveObjectWithData: myEncodedObject];
+    return temp;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return _contactsToBeAdded.count;
+    if (tableView == inCircleUserTable) {
+       return [self.registeredUsers count];
+    }
+    else
+    {
+        return _notRegisteredContacts.count;
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -78,15 +136,18 @@
             if([view isKindOfClass:[UITableViewCell class]])
             {
                 cell = (AACustomCell*)view;
-                 cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;               
-                cell.nameLbl.text =[[_contactsToBeAdded objectAtIndex:indexPath.row]objectForKey:@"firstName"];
-                cell.userImageView.image = [UIImage imageNamed:@"sample-user"];
-                cell.userStatusImageView.hidden = YES;
-                if (indexPath.row == 1) {
-                    cell.userStatusImageView.hidden = NO;
-                    cell.userStatusImageView.image = [UIImage imageNamed:@"online"];
-                    cell.lastSeenTimeLbl.hidden =YES;
+                 cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+                if (tableView ==inCircleUserTable) {
+                    cell.nameLbl.text =[[_registeredUsers objectAtIndex:indexPath.row]objectForKey:@"name"];
+                    cell.userImageView.image = [UIImage imageNamed:@"sample-user"];
+                    cell.userStatusImageView.hidden = YES;
+                    if (indexPath.row == 1) {
+                        cell.userStatusImageView.hidden = NO;
+                        cell.userStatusImageView.image = [UIImage imageNamed:@"online"];
+                        cell.lastSeenTimeLbl.hidden =YES;
+                    }
                 }
+               
                 
                // NSLog(@"%@",[[_contactsToBeAdded objectAtIndex:indexPath.row]objectForKey:@"firstName"]);
             }
@@ -97,6 +158,12 @@
     
     return cell;
 
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    AAMapVC *mapView = [[AAMapVC alloc]init];
+    [self.navigationController pushViewController:mapView animated:YES];
 }
 
 - (void)didReceiveMemoryWarning
