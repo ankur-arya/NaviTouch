@@ -90,7 +90,7 @@
 								<bool key="IBUIClipsSubviews">YES</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								<int key="IBUIContentVerticalAlignment">0</int>
-								<string key="IBUIText"/>
+								<string key="IBUIText">9911078444</string>
 								<int key="IBUIBorderStyle">3</int>
 								<string key="IBUIPlaceholder">Number</string>
 								<object class="NSColor" key="IBUITextColor">
@@ -129,7 +129,7 @@
 								<bool key="IBUIClipsSubviews">YES</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								<int key="IBUIContentVerticalAlignment">0</int>
-								<string key="IBUIText"/>
+								<string key="IBUIText">ankur</string>
 								<int key="IBUIBorderStyle">3</int>
 								<string key="IBUIPlaceholder">Password</string>
 								<object class="NSColor" key="IBUITextColor">

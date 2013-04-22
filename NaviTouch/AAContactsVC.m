@@ -79,13 +79,16 @@
 {
     for (int i = 0; i < myRegisteredFriendsArray.count; i++) {
         NSString *phoneNumberKeyStr = [[myRegisteredFriendsArray objectAtIndex:i]objectForKey:@"phone"];
+        NSString *moodStr = [[myRegisteredFriendsArray objectAtIndex:i]objectForKey:@"mood"];
+        NSString *uidStr = [[myRegisteredFriendsArray objectAtIndex:i]objectForKey:@"uid"];
+        NSString *activeTime = [[myRegisteredFriendsArray objectAtIndex:i]objectForKey:@"activetime"];
         for (int j = 0; j<_contactsToBeAdded.count; j++) {
             NSString *registeredNameForKey = [[_contactsToBeAdded objectAtIndex:j]objectForKey:phoneNumberKeyStr];
             
             
                        if (registeredNameForKey) {
                            NSLog(@"registeredNameForKey  ---- > %@ = %@",phoneNumberKeyStr,registeredNameForKey);
-                           NSDictionary *tempDict = [NSDictionary dictionaryWithObjectsAndKeys:phoneNumberKeyStr,@"phone",registeredNameForKey,@"name", nil];
+                           NSDictionary *tempDict = [NSDictionary dictionaryWithObjectsAndKeys:phoneNumberKeyStr,@"phone",registeredNameForKey,@"name",moodStr,@"mood",uidStr,@"uid",activeTime,@"activetime", nil];
                            [_registeredUsers addObject:tempDict];
                            [[_contactsToBeAdded objectAtIndex:i]removeObjectForKey:phoneNumberKeyStr];
                            
@@ -163,6 +166,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     AAMapVC *mapView = [[AAMapVC alloc]init];
+    mapView.uidStr = [[_registeredUsers objectAtIndex:indexPath.row]objectForKey:@"uid"];
     [self.navigationController pushViewController:mapView animated:YES];
 }
 

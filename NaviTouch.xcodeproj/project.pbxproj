@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		920E23E7170FCADC004A7AA1 /* DMLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 920E23E5170FCADC004A7AA1 /* DMLocationManager.m */; };
+		920E23E8170FCADC004A7AA1 /* DMLocationManager.strings in Resources */ = {isa = PBXBuildFile; fileRef = 920E23E6170FCADC004A7AA1 /* DMLocationManager.strings */; };
+		920E23ED170FCB01004A7AA1 /* DMOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 920E23EA170FCB01004A7AA1 /* DMOperation.m */; };
+		920E23EE170FCB01004A7AA1 /* DMLocationRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 920E23EC170FCB01004A7AA1 /* DMLocationRequest.m */; };
+		920E23F2170FEA4C004A7AA1 /* AATabController.m in Sources */ = {isa = PBXBuildFile; fileRef = 920E23F0170FEA4C004A7AA1 /* AATabController.m */; };
+		920E23F3170FEA4C004A7AA1 /* AATabController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 920E23F1170FEA4C004A7AA1 /* AATabController.xib */; };
+		920E23F7171003C0004A7AA1 /* AASearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 920E23F5171003BF004A7AA1 /* AASearchViewController.m */; };
+		920E23F8171003C0004A7AA1 /* AASearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 920E23F6171003C0004A7AA1 /* AASearchViewController.xib */; };
+		920E23FC17100719004A7AA1 /* MNEValueTrackingSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 920E23FB17100719004A7AA1 /* MNEValueTrackingSlider.m */; };
 		9213A03D16EE3B48005CACD1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9213A03C16EE3B48005CACD1 /* UIKit.framework */; };
 		9213A03F16EE3B48005CACD1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9213A03E16EE3B48005CACD1 /* Foundation.framework */; };
 		9213A04116EE3B48005CACD1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9213A04016EE3B48005CACD1 /* CoreGraphics.framework */; };
@@ -34,9 +43,25 @@
 		92FA0E1716F5919300530884 /* AACustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92FA0E1616F5919300530884 /* AACustomCell.xib */; };
 		92FA0E1B16F5A22700530884 /* sample-user@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 92FA0E1A16F5A22700530884 /* sample-user@2x.png */; };
 		92FA0E1D16F5A36F00530884 /* online@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 92FA0E1C16F5A36F00530884 /* online@2x.png */; };
+		92FBEC2C1705AA8400734864 /* Annotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 92FBEC2B1705AA8400734864 /* Annotation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		920E23E4170FCADC004A7AA1 /* DMLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMLocationManager.h; sourceTree = "<group>"; };
+		920E23E5170FCADC004A7AA1 /* DMLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMLocationManager.m; sourceTree = "<group>"; };
+		920E23E6170FCADC004A7AA1 /* DMLocationManager.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = DMLocationManager.strings; sourceTree = "<group>"; };
+		920E23E9170FCB01004A7AA1 /* DMOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMOperation.h; sourceTree = "<group>"; };
+		920E23EA170FCB01004A7AA1 /* DMOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMOperation.m; sourceTree = "<group>"; };
+		920E23EB170FCB01004A7AA1 /* DMLocationRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMLocationRequest.h; sourceTree = "<group>"; };
+		920E23EC170FCB01004A7AA1 /* DMLocationRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMLocationRequest.m; sourceTree = "<group>"; };
+		920E23EF170FEA4C004A7AA1 /* AATabController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AATabController.h; sourceTree = "<group>"; };
+		920E23F0170FEA4C004A7AA1 /* AATabController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AATabController.m; sourceTree = "<group>"; };
+		920E23F1170FEA4C004A7AA1 /* AATabController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AATabController.xib; sourceTree = "<group>"; };
+		920E23F4171003BF004A7AA1 /* AASearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AASearchViewController.h; sourceTree = "<group>"; };
+		920E23F5171003BF004A7AA1 /* AASearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AASearchViewController.m; sourceTree = "<group>"; };
+		920E23F6171003C0004A7AA1 /* AASearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AASearchViewController.xib; sourceTree = "<group>"; };
+		920E23FA17100719004A7AA1 /* MNEValueTrackingSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNEValueTrackingSlider.h; sourceTree = "<group>"; };
+		920E23FB17100719004A7AA1 /* MNEValueTrackingSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNEValueTrackingSlider.m; sourceTree = "<group>"; };
 		9213A03916EE3B48005CACD1 /* NaviTouch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NaviTouch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9213A03C16EE3B48005CACD1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		9213A03E16EE3B48005CACD1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -75,6 +100,8 @@
 		92FA0E1616F5919300530884 /* AACustomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AACustomCell.xib; sourceTree = "<group>"; };
 		92FA0E1A16F5A22700530884 /* sample-user@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sample-user@2x.png"; sourceTree = "<group>"; };
 		92FA0E1C16F5A36F00530884 /* online@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "online@2x.png"; sourceTree = "<group>"; };
+		92FBEC2A1705AA8400734864 /* Annotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Annotation.h; sourceTree = "<group>"; };
+		92FBEC2B1705AA8400734864 /* Annotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Annotation.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +122,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		920E23F9171006FF004A7AA1 /* CustomSlider */ = {
+			isa = PBXGroup;
+			children = (
+				920E23FA17100719004A7AA1 /* MNEValueTrackingSlider.h */,
+				920E23FB17100719004A7AA1 /* MNEValueTrackingSlider.m */,
+			);
+			name = CustomSlider;
+			sourceTree = "<group>";
+		};
 		9213A03016EE3B48005CACD1 = {
 			isa = PBXGroup;
 			children = (
@@ -173,6 +209,8 @@
 		92FA0E1416F5908400530884 /* 3rd Party Library */ = {
 			isa = PBXGroup;
 			children = (
+				920E23F9171006FF004A7AA1 /* CustomSlider */,
+				92FBEC291702CB9400734864 /* LocationManager */,
 				92FA0E1316F5906F00530884 /* KeyboardAvoiding */,
 				92740F7616F0E6F900CBFC0A /* OpenUDID */,
 			);
@@ -182,6 +220,8 @@
 		92FA0E1516F590A500530884 /* AAViews */ = {
 			isa = PBXGroup;
 			children = (
+				92FBEC2A1705AA8400734864 /* Annotation.h */,
+				92FBEC2B1705AA8400734864 /* Annotation.m */,
 				9213A04B16EE3B48005CACD1 /* AAAppDelegate.h */,
 				9213A04C16EE3B48005CACD1 /* AAAppDelegate.m */,
 				9213A05416EE3B48005CACD1 /* AAViewController.h */,
@@ -199,8 +239,28 @@
 				92FA0E0416F462C200530884 /* AACustomCell.h */,
 				92FA0E0516F462C200530884 /* AACustomCell.m */,
 				92FA0E1616F5919300530884 /* AACustomCell.xib */,
+				920E23EF170FEA4C004A7AA1 /* AATabController.h */,
+				920E23F0170FEA4C004A7AA1 /* AATabController.m */,
+				920E23F1170FEA4C004A7AA1 /* AATabController.xib */,
+				920E23F4171003BF004A7AA1 /* AASearchViewController.h */,
+				920E23F5171003BF004A7AA1 /* AASearchViewController.m */,
+				920E23F6171003C0004A7AA1 /* AASearchViewController.xib */,
 			);
 			name = AAViews;
+			sourceTree = "<group>";
+		};
+		92FBEC291702CB9400734864 /* LocationManager */ = {
+			isa = PBXGroup;
+			children = (
+				920E23E4170FCADC004A7AA1 /* DMLocationManager.h */,
+				920E23E5170FCADC004A7AA1 /* DMLocationManager.m */,
+				920E23E6170FCADC004A7AA1 /* DMLocationManager.strings */,
+				920E23E9170FCB01004A7AA1 /* DMOperation.h */,
+				920E23EA170FCB01004A7AA1 /* DMOperation.m */,
+				920E23EB170FCB01004A7AA1 /* DMLocationRequest.h */,
+				920E23EC170FCB01004A7AA1 /* DMLocationRequest.m */,
+			);
+			name = LocationManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -266,6 +326,9 @@
 				92FA0E1716F5919300530884 /* AACustomCell.xib in Resources */,
 				92FA0E1B16F5A22700530884 /* sample-user@2x.png in Resources */,
 				92FA0E1D16F5A36F00530884 /* online@2x.png in Resources */,
+				920E23E8170FCADC004A7AA1 /* DMLocationManager.strings in Resources */,
+				920E23F3170FEA4C004A7AA1 /* AATabController.xib in Resources */,
+				920E23F8171003C0004A7AA1 /* AASearchViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,6 +348,13 @@
 				92FA0E0616F462C200530884 /* AACustomCell.m in Sources */,
 				92FA0E0916F58EE100530884 /* TPKeyboardAvoidingScrollView.m in Sources */,
 				92FA0E0D16F58FFF00530884 /* AAMapVC.m in Sources */,
+				92FBEC2C1705AA8400734864 /* Annotation.m in Sources */,
+				920E23E7170FCADC004A7AA1 /* DMLocationManager.m in Sources */,
+				920E23ED170FCB01004A7AA1 /* DMOperation.m in Sources */,
+				920E23EE170FCB01004A7AA1 /* DMLocationRequest.m in Sources */,
+				920E23F2170FEA4C004A7AA1 /* AATabController.m in Sources */,
+				920E23F7171003C0004A7AA1 /* AASearchViewController.m in Sources */,
+				920E23FC17100719004A7AA1 /* MNEValueTrackingSlider.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
